@@ -3,11 +3,12 @@
 const limit = 5;
 const inputContainer = document.querySelector('.inputContainer');
 const arrContainer = document.querySelector('.arrContainer');
-
+const containerGame = document.querySelector('.containerGame');
+const containerStart = document.querySelector('.containerStart');
 const mineNumbers = document.getElementById('mineNumbers');
 const userNumbers = document.getElementById('userNumbers');
 const invia = document.getElementById('invia');
-
+const letsStart = document.querySelector('.letStart');
 // arrays
 const arrRandomNum = [];
 const arrUserNum = [];
@@ -19,13 +20,20 @@ const inputs3  = document.querySelector('.inputs3');
 const inputs4  = document.querySelector('.inputs4');
 const inputs5  = document.querySelector('.inputs5');
 
+letsStart.addEventListener('click', function(){
+  containerStart.classList.add('hide');
+  containerGame.classList.remove('hide');
 
 
-
-setTimeout(function(){
+  setTimeout(function(){
   inputContainer.classList.remove('hide');
   arrContainer.classList.add('hide');
 }, 5000);
+})
+
+
+
+
 
 randomNumbers( 9, 0)
 

@@ -3,3 +3,57 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.hide {
+  display: none;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.containerStart {
+  text-align: center;
+}
+
+.containerStart .letStart {
+  
+}
+
+main h1 {
+  width: 100%;
+  display: block;
+}
+
+.inputContainer{
+  text-align: center;
+}
+ .buttons{
+  height: 50px;
+  width: 100px;
+  line-height: 50px;
+  margin: 0 auto ;
+  margin-top: 20px;
+  border-radius: 20px;
+  font-size: 20px;
+  background-color: blue;
+  color: aliceblue;
+}
+
+.inputContainer input {
+  text-align: center;
+  width: 130px;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid grey;
+  font-size: 30px;
+}
+
+.inputContainer input::-webkit-outer-spin-button,
+.inputContainer input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
