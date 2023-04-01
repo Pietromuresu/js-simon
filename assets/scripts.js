@@ -12,6 +12,7 @@ const userNumbers = document.getElementById('userNumbers');
 const invia = document.getElementById('invia');
 const letsStart = document.querySelector('.letStart');
 const retry = document.querySelector('.retry');
+const score = document.querySelector('.score');
 // arrays
 let arrRandomNum = [];
 let arrUserNum = [];
@@ -23,7 +24,7 @@ let inputs2  = document.querySelector('.inputs2');
 let inputs3  = document.querySelector('.inputs3');
 let inputs4  = document.querySelector('.inputs4');
 let inputs5  = document.querySelector('.inputs5');
-
+let points = [0];
 
 
 letsStart.addEventListener('click', function(){
@@ -41,6 +42,10 @@ for(let i = 0; i < arrRandomNum.length; i++){
   inputContainer.classList.remove('hide');
   arrContainer.classList.add('hide');
 }, 5000);
+
+score.innerHTML = `
+Points: ${points}
+`;
 
 })
 
@@ -85,6 +90,8 @@ invia.addEventListener('click', function(){
     arrWrongNum.push(inputs5.value);
   } 
 
+
+
   // imposto la vittoria o la sconfitta
   // se hai inserito i numeri corretti in ordine corretto hai vinto
   // se hai sbagliato dei numeri hai perso e vengono mostrati solo quelli giusti 
@@ -94,15 +101,22 @@ invia.addEventListener('click', function(){
     Hai indovinato tutti i numeri!
     `
     results.classList.add('win')
+    points++;
+
+ score.innerHTML = `
+  Points: ${points}
+ `
   }else {
     results.innerHTML  = `
     Hai indovinato solo ${arrWrongNum.length} numeri.<br>
     Corrispondono solo ${arrWrongNum} .
     `
     results.classList.add('lose');
-  
+  points = [0];
+  score.innerHTML = `
+  Points: ${points}
+  `
   }
-
 
   // se hai inserito i numeri corretti ma in ordine sbagliato viene mostrato l'ordine corretto e hai perso 
   if (arrWrongNum.length === 5 && JSON.stringify(arrRandomNum) !== JSON.stringify(arrUserNum)){
@@ -112,6 +126,10 @@ invia.addEventListener('click', function(){
     `
     results.classList.add('lose');
   
+    points = [0];
+    score.innerHTML = `
+    Points: ${points}
+ `
   }
 
 })
@@ -135,7 +153,6 @@ retry.addEventListener('click', function(){
   results.classList.remove('win');
   results.classList.remove('lose');
 })
-
 
 
 
