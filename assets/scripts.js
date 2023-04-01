@@ -11,38 +11,39 @@ const mineNumbers = document.getElementById('mineNumbers');
 const userNumbers = document.getElementById('userNumbers');
 const invia = document.getElementById('invia');
 const letsStart = document.querySelector('.letStart');
+const retry = document.querySelector('.retry');
 // arrays
-const arrRandomNum = [];
-const arrUserNum = [];
-const arrWrongNum = [];
+let arrRandomNum = [];
+let arrUserNum = [];
+let arrWrongNum = [];
 
 // inputs
-const inputs1  = document.querySelector('.inputs1');
-const inputs2  = document.querySelector('.inputs2');
-const inputs3  = document.querySelector('.inputs3');
-const inputs4  = document.querySelector('.inputs4');
-const inputs5  = document.querySelector('.inputs5');
+let inputs1  = document.querySelector('.inputs1');
+let inputs2  = document.querySelector('.inputs2');
+let inputs3  = document.querySelector('.inputs3');
+let inputs4  = document.querySelector('.inputs4');
+let inputs5  = document.querySelector('.inputs5');
 
 
 
 letsStart.addEventListener('click', function(){
   containerStart.classList.add('hide');
   containerGame.classList.remove('hide');
+randomNumbers( 9, 0)
 
+mineNumbers.innerHTML = arrRandomNum;
 
   setTimeout(function(){
   inputContainer.classList.remove('hide');
   arrContainer.classList.add('hide');
 }, 5000);
+
 })
 
 
 
 
 
-randomNumbers( 9, 0)
-
-mineNumbers.innerHTML = arrRandomNum;
 
 
 // evento 'click' al bottone invia 
@@ -106,8 +107,24 @@ invia.addEventListener('click', function(){
   
   }
 
+})
 
-   
+
+retry.addEventListener('click', function(){
+  inputs1.value = "";
+  inputs2.value = "";
+  inputs3.value = "";
+  inputs4.value = "";
+  inputs5.value = "";
+  arrUserNum = [];
+  arrWrongNum = [];
+  arrRandomNum =[];
+  arrContainer.classList.remove('hide');
+  containerStart.classList.remove('hide');
+  containerGame.classList.add('hide');
+  containerResults.classList.add('hide');
+  results.classList.remove('win');
+  results.classList.remove('lose');
 })
 
 
@@ -126,7 +143,4 @@ function randomNumbers(max, min){
   }
   return arrRandomNum
 }
-
-
-
 
