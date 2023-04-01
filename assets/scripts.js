@@ -97,7 +97,7 @@ invia.addEventListener('click', function(){
 
 
   // se hai inserito i numeri corretti ma in ordine sbagliato viene mostrato l'ordine corretto e hai perso 
-  if (arrWrongNum.length === 5 ){
+  if (arrWrongNum.length === 5 && JSON.stringify(arrRandomNum) !== JSON.stringify(arrUserNum)){
     results.innerHTML  = `
     Hai sbagliato l'ordine dei numeri.<br>
     l'ordine giusto era ${arrRandomNum} .
