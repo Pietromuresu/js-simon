@@ -12,6 +12,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   height: 100vh;
 }
 
@@ -19,9 +20,6 @@ main {
   text-align: center;
 }
 
-.containerStart .letStart {
-  
-}
 
 main h1 {
   width: 100%;
@@ -31,6 +29,7 @@ main h1 {
 .inputContainer{
   text-align: center;
 }
+
  .buttons{
   height: 50px;
   width: 100px;
@@ -56,4 +55,23 @@ main h1 {
 .inputContainer input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+
+.results {
+  margin-top: 30px;
+  font-size: 40px;
+  border-radius: 20px;
+}
+
+.win{
+  background-color: rgb(39, 109, 39);
+  color: aliceblue;
+  padding: 10px 20px;
+}
+
+.lose {
+  background-color: rgb(146, 52, 26);
+  color: aliceblue;
+  padding: 10px 20px;
 }
