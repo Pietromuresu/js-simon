@@ -8,12 +8,25 @@
   display: none;
 }
 
-main {
+body {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   height: 100vh;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 500px;
+  width: 600px;
+  padding: 30px;
+  border-radius: 20px;
+  background-color:royalblue;
+  color: aliceblue;
 }
 
 .containerStart {
@@ -45,7 +58,7 @@ main h1 {
 
 .inputContainer input {
   text-align: center;
-  width: 130px;
+  width: 40px;
   height: 50px;
   border-radius: 10px;
   border: 1px solid grey;
@@ -61,7 +74,7 @@ main h1 {
 
 .results {
   margin-top: 30px;
-  font-size: 40px;
+  font-size: 30px;
   border-radius: 20px;
 }
 
@@ -72,7 +85,7 @@ main h1 {
 }
 
 .lose {
-  background-color: rgb(146, 52, 26);
+  background-color: rgb(146, 26, 26);
   color: aliceblue;
   padding: 10px 20px;
 }

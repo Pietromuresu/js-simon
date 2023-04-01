@@ -31,7 +31,11 @@ letsStart.addEventListener('click', function(){
   containerGame.classList.remove('hide');
 randomNumbers( 9, 0)
 
-mineNumbers.innerHTML = arrRandomNum;
+
+
+for(let i = 0; i < arrRandomNum.length; i++){
+  mineNumbers.innerHTML  += ' ' + arrRandomNum[i];
+}
 
   setTimeout(function(){
   inputContainer.classList.remove('hide');
@@ -54,7 +58,10 @@ invia.addEventListener('click', function(){
   arrUserNum.push(parseInt(inputs3.value));
   arrUserNum.push(parseInt(inputs4.value));
   arrUserNum.push(parseInt(inputs5.value));
-  userNumbers.innerHTML = arrUserNum;
+  
+  for(let i = 0; i < arrUserNum.length; i++){
+    userNumbers.innerHTML  += ' ' + arrUserNum[i];
+  }
   
   inputContainer.classList.add('hide');
   arrContainer.classList.remove('hide');
@@ -84,7 +91,7 @@ invia.addEventListener('click', function(){
 
   if(JSON.stringify(arrRandomNum) === JSON.stringify(arrUserNum)){
     results.innerHTML  = `
-    hai indovinato tutti i numeri
+    Hai indovinato tutti i numeri!
     `
     results.classList.add('win')
   }else {
@@ -119,6 +126,8 @@ retry.addEventListener('click', function(){
   arrUserNum = [];
   arrWrongNum = [];
   arrRandomNum =[];
+  mineNumbers.innerHTML = '';
+  userNumbers.innerHTML = ''
   arrContainer.classList.remove('hide');
   containerStart.classList.remove('hide');
   containerGame.classList.add('hide');
