@@ -28,6 +28,7 @@ main {
   border-radius: 20px;
   background-color:royalblue;
   color: aliceblue;
+  box-shadow: 0 0 5px royalblue;
 }
 
 .containerStart {
@@ -55,6 +56,12 @@ main h1 {
   font-size: 20px;
   background-color: blue;
   color: aliceblue;
+}
+
+.buttons:hover {
+  box-shadow: 0 0 2px blue;
+  background-color: rgb(9, 9, 189);
+
 }
 
 .inputContainer input {
