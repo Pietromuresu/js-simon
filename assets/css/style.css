@@ -73,10 +73,17 @@ main h1 {
   font-size: 30px;
 }
 
+/* chrome input arrows   */
 .inputContainer input::-webkit-outer-spin-button,
 .inputContainer input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+/* mozilla input arrows  */
+.inputContainer input{
+
+  -moz-appearance:textfield;
 }
 
 

@@ -17,6 +17,7 @@ const score = document.querySelector('.score');
 let arrRandomNum = [];
 let arrUserNum = [];
 let arrWrongNum = [];
+let points = [0];
 
 // inputs
 let inputs1  = document.querySelector('.inputs1');
@@ -24,7 +25,6 @@ let inputs2  = document.querySelector('.inputs2');
 let inputs3  = document.querySelector('.inputs3');
 let inputs4  = document.querySelector('.inputs4');
 let inputs5  = document.querySelector('.inputs5');
-let points = [0];
 
 
 letsStart.addEventListener('click', function(){
@@ -74,21 +74,15 @@ invia.addEventListener('click', function(){
 
   // Salvo i numeri giusti in un array e controllo che i numeri non siano doppi in quel caso li pusho solo una volta
   
-  if (arrRandomNum.includes(parseInt(inputs1.value)) && (!arrWrongNum.includes(inputs1.value))){
-    arrWrongNum.push(inputs1.value);
-  }
-  if(arrRandomNum.includes(parseInt(inputs2.value))  && (!arrWrongNum.includes(inputs2.value))){
-    arrWrongNum.push(inputs2.value);
-  }
-  if(arrRandomNum.includes(parseInt(inputs3.value)) && (!arrWrongNum.includes(inputs3.value))){
-    arrWrongNum.push(inputs3.value);
-  } 
-  if(arrRandomNum.includes(parseInt(inputs4.value)) && (!arrWrongNum.includes(inputs4.value))){
-    arrWrongNum.push(inputs4.value);
-  } 
-  if(arrRandomNum.includes(parseInt(inputs5.value)) && (!arrWrongNum.includes(inputs5.value))){
-    arrWrongNum.push(inputs5.value);
-  } 
+  if (arrRandomNum.includes(parseInt(inputs1.value)) && (!arrWrongNum.includes(inputs1.value))) arrWrongNum.push(inputs1.value);
+  
+  if(arrRandomNum.includes(parseInt(inputs2.value))  && (!arrWrongNum.includes(inputs2.value))) arrWrongNum.push(inputs2.value);
+  
+  if(arrRandomNum.includes(parseInt(inputs3.value)) && (!arrWrongNum.includes(inputs3.value))) arrWrongNum.push(inputs3.value);
+  if(arrRandomNum.includes(parseInt(inputs4.value)) && (!arrWrongNum.includes(inputs4.value))) arrWrongNum.push(inputs4.value);
+   
+  if(arrRandomNum.includes(parseInt(inputs5.value)) && (!arrWrongNum.includes(inputs5.value))) arrWrongNum.push(inputs5.value);
+  
 
 
 
@@ -103,19 +97,19 @@ invia.addEventListener('click', function(){
     results.classList.add('win')
     points++;
 
- score.innerHTML = `
-  Points: ${points}
- `
+    score.innerHTML = `
+      Points: ${points}
+    `
   }else {
     results.innerHTML  = `
     Hai indovinato solo ${arrWrongNum.length} numeri.<br>
     Corrispondono solo ${arrWrongNum} .
     `
     results.classList.add('lose');
-  points = [0];
-  score.innerHTML = `
-  Points: ${points}
-  `
+    points = [0];
+    score.innerHTML = `
+    Points: ${points}
+    `
   }
 
   // se hai inserito i numeri corretti ma in ordine sbagliato viene mostrato l'ordine corretto e hai perso 
